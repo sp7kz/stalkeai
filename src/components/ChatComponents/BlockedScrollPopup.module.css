@@ -1,0 +1,129 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Popup - Estilo Moderno */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Maior que o overlay (9998) */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  max-width: 300px;
+  width: calc(100% - 40px);
+  padding: 24px;
+  
+  text-align: center;
+  border-radius: 20px;
+  
+  background: rgba(220, 38, 38, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  
+  animation: popupFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Title */
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.1px;
+}
+
+/* Description */
+.description {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Button */
+.button {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 360px) {
+  .popup {
+    max-width: 280px;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 15px;
+  }
+  
+  .description {
+    font-size: 12px;
+  }
+  
+  .button {
+    font-size: 12px;
+    padding: 9px 18px;
+  }
+}
