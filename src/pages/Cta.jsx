@@ -19,7 +19,7 @@ const Cta = () => {
   const [activeTest, setActiveTest] = useState(0);
   const [popup, setPopup] = useState({ show: false, text: '' });
   const [messages, setMessages] = useState([]);
-  const [checkoutUrl, setCheckoutUrl] = useState('https://checkout.perfectpay.com.br/pay/PPU38CQBENN');
+  const [checkoutUrl, setCheckoutUrl] = useState('https://checkout.perfectpay.com.br/pay/PPU38CQDM2C');
   const chatRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -36,7 +36,7 @@ const Cta = () => {
   useEffect(() => {
     const currentParams = new URLSearchParams(window.location.search);
     const paramsString = currentParams.toString();
-    const baseUrl = 'https://checkout.perfectpay.com.br/pay/PPU38CQBENN';
+    const baseUrl = 'https://checkout.perfectpay.com.br/pay/PPU38CQDM2C';
     setCheckoutUrl(`${baseUrl}${paramsString ? `?${paramsString}` : ''}`);
   }, []);
 
