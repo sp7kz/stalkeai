@@ -13,6 +13,7 @@ import perfilSemFoto from '../assets/feed/perfil-sem-foto.jpeg';
 import story1 from '../assets/chat/chat3-story1.png';
 import story2 from '../assets/chat/chat3-story2.png';
 
+
 const Cta = () => {
   const [countdown, setCountdown] = useState('05:00');
   const [activeFaq, setActiveFaq] = useState(null);
